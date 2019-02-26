@@ -1,3 +1,8 @@
+<?php
+	session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +19,12 @@
         margin-left: 450px;
     }
 
+    #navbar .nav.navbar-nav li h4 {
+      margin-top:15px;
+      margin-right:650px;
+    }
+
+
     </style>
 <body>
 
@@ -26,15 +37,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" [routerLink]="['/home']">MetHotels</a>
+          <a class="navbar-brand">MetHotels</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
 
           <ul class="nav navbar-nav navbar-right">
-            <li [routerLinkActive]="['active']"><a [routerLink]="['/home']">Home</a></li>
-            <li [routerLinkActive]="['active']"><a [routerLink]="['/add']">Add Hotel</a></li>
-            <li [routerLinkActive]="['active']"><a [routerLink]="['/login']">Login</a></li>
-            <li [routerLinkActive]="['active']"><a [routerLink]="['/register']">Register</a></li>
+		  	<li><h4>Welcome <?php echo $_SESSION['username']; ?></h4></li>
+			<li><a href="logout.php">Logout</a></li>
+            <li><a>Home</a></li>
+            <li><a>Add Hotel</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
