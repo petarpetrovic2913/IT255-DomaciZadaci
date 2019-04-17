@@ -1,0 +1,32 @@
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="listFilter"
+  placeholder="Search..."
+/>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>Hotel name</td>
+      <td>Has TV</td>
+      <td>Beds</td>
+      <td>Price</td>
+      <td *ngIf="loggedIn" width="200" align="center">Action</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let room of filteredRooms">
+      <td>{{ room.hotelName }}</td>
+      <td>{{ room.hasTV }}</td>
+      <td>{{ room.beds }}</td>
+      <td>{{ room.price }}</td>
+      <td width="200" *ngIf="loggedIn">
+        <a class="btn btn-danger" (click)="deleteRoom(room.roomId)">Delete</a>
+        <a class="btn btn-primary" [routerLink]="['/update', room.roomId]"
+          >Update</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>

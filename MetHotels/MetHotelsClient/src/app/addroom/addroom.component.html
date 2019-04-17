@@ -1,0 +1,40 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Admin form for adding rooms</div>
+    <div class="panel-body">
+      <form class="form-horizontal" (submit)="addRoom()">
+    <div class="form-group">
+      <label for="hotelName" class="col-sm-2 control-label">Hotel name: </label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control"  [(ngModel)]="room.hotelName" name="hotelName">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="hasTV" class="col-sm-2 control-label">Has TV : </label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" [(ngModel)]="room.hasTV" name="hasTV">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="beds" class="col-sm-2 control-label">Beds : </label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control"  [(ngModel)]="room.beds" name="beds">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="price" class="col-sm-2 control-label">Price : </label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control"  [(ngModel)]="room.price" name="price">
+      </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-8">
+          <button type="submit" class="btn btn-success">Save</button>
+          <a  class="btn btn-info" (click)="goBack()">Cancel</a>
+        </div>
+       
+      </div>
+    </form>
+    
+      </div>
+    </div>

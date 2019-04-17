@@ -1,0 +1,41 @@
+<form role="form" [formGroup]="roomForm" ng-bind="id">
+  <div class="form-group">
+    <label for="hotelName">Hotel Name:</label>
+    <input
+      type="text"
+      [(ngModel)]="defaultHotelName"
+      class="form-control"
+      formControlName="hotelName"
+    />
+  </div>
+  <div class="form-group">
+    <label for="hasTV">Has TV:</label>
+    <input
+      type="text"
+      [(ngModel)]="defaultHasTv"
+      class="form-control"
+      formControlName="hasTV"
+    />
+  </div>
+  <div class="form-group">
+    <label for="beds">Beds:</label>
+    <input
+      type="text"
+      [(ngModel)]="defaultBeds"
+      class="form-control"
+      formControlName="beds"
+    />
+  </div>
+  <div class="form-group">
+    <label for="price">Price:</label>
+    <input
+      type="text"
+      [(ngModel)]="defaultPrice"
+      class="form-control"
+      formControlName="price"
+    />
+  </div>
+  <button (click)="updateRoom(id)" class="btn btn-primary">
+    Update
+  </button>
+</form>
